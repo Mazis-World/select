@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:select/authservice.dart';
 import 'package:select/colors.dart';
+import 'package:select/dashboard.dart';
+import 'package:select/main.dart';
 import 'customcheckbox.dart';
 
 class Login extends StatefulWidget {
@@ -25,7 +27,13 @@ class _LoginState extends State<Login> {
     final response = await authService.signIn(username, password);
 
     if (response.success) {
-      print('Sign-in successful');
+      // Check user session and navigate to the Dashboard
+      final user = await authService.checkUser();
+      if (user != null) {
+        Navigator.pushReplacementNamed(context, '/dashboard');
+      } else {
+        print('User session is not available.'); // You can handle this case as needed
+      }
     } else {
       print('Sign-in failed: ${response.message}');
     }

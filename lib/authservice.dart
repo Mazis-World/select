@@ -26,8 +26,15 @@ class AuthService {
 
   // Check User Session
   Future<SupabaseResponse> checkSession() async {
+    final sesh = _supabaseClient.auth.currentSession;
+    var seshstatus = sesh?.isExpired;
+    return SupabaseResponse(seshstatus!, seshstatus.toString());
+  }
+
+  // Check User Session
+  Future<SupabaseResponse> checkUser() async {
     final user = _supabaseClient.auth.currentUser;
-    return SupabaseResponse(user != null, 'Success');
+    return SupabaseResponse(user!=null, 'Failure' ?? 'Success');
   }
 }
 
