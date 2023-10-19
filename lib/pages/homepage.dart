@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:select/colors.dart';
-import 'package:select/footer.dart';
+import 'package:select/utils/colors.dart';
+import 'package:select/modules/footer.dart';
 
-import 'featurecard.dart';
+import '../modules/featurecard.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage() : super();
@@ -28,11 +28,14 @@ class Homepage extends StatelessWidget {
             child: Column(
               children: [
                 Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                   elevation: 4,
                   margin: EdgeInsets.all(16),
                   child: Container(
                     width: double.infinity, // Expand to available width
-                    height: 500,
+                    height: 810,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
@@ -40,24 +43,37 @@ class Homepage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: SingleChildScrollView(
-                      child: Padding(
+                    child: Stack(
+                      children: [Padding(
                         padding: const EdgeInsets.fromLTRB(
                             32, 100, 16, 40), // Reduced right padding
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment
-                              .start, // Align text content to the left
+                              .center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               "Select From The Hottest Guys To Hook Up With!",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 65.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(height: 20),
+                            Text(
+                              "BROWSE THE MOST SELECT PROFESSIONAL STRAIGHT MALE ESCORTS IN THE WORLD.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             SizedBox(height: 10),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ElevatedButton(
                                   onPressed: () {
@@ -93,7 +109,7 @@ class Homepage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
+                      )],
                     ),
                   ),
                 ),
@@ -116,7 +132,7 @@ class Homepage extends StatelessWidget {
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FeatureCard(
                                 icon: Icons.group,
@@ -143,7 +159,8 @@ class Homepage extends StatelessWidget {
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FeatureCard(
                                 icon: Icons.favorite,
@@ -170,7 +187,7 @@ class Homepage extends StatelessWidget {
                         SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FeatureCard(
                                 icon: Icons.group,
@@ -191,43 +208,6 @@ class Homepage extends StatelessWidget {
                                     "Be your complete, authentic self on Selective Connections - a network that values your uniqueness.",
                               ),
                             ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top:120.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Card(
-                          elevation: 4,
-                          margin: EdgeInsets.all(16),
-                          child: Container(
-                            width: 400, // Expand to available width
-                            height: 500,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/backdrop1.jpg'), // Replace with your image asset path
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            child: SingleChildScrollView(
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Treat Yourself To A Select Male',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
                           ),
                         ),
                       ],

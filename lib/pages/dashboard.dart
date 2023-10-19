@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:select/authservice.dart';
+import 'package:select/services/authservice.dart';
 
 class Dashboard extends StatelessWidget {
   final AuthService authService;

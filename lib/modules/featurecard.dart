@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:select/colors.dart';
+import 'package:select/utils/colors.dart';
 
 class FeatureCard extends StatelessWidget {
   final IconData icon;

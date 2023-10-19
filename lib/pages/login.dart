@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:select/authservice.dart';
-import 'package:select/colors.dart';
-import 'package:select/dashboard.dart';
+import 'package:select/services/authservice.dart';
+import 'package:select/utils/colors.dart';
+import 'package:select/pages/dashboard.dart';
 import 'package:select/main.dart';
-import 'customcheckbox.dart';
+import '../modules/customcheckbox.dart';
 
 class Login extends StatefulWidget {
   final AuthService authService; // Add this line
